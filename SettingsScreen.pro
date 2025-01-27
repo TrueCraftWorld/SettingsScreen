@@ -1,4 +1,4 @@
-include(WifiChooser/wifichooser.pri)
+include(wifimodule/wifichooser.pri)
 QT += quick
 
 # You can make your code fail to compile if it uses deprecated APIs.

@@ -1,0 +1,3 @@
+[submodule "wifimodule"]
+	path = wifimodule
+	url = https://github.com/TrueCraftWorld/WifiChooser.git
