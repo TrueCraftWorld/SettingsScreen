@@ -1,6 +1,9 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
+#include "WifiChooser/NetworkDiscover.h"
+
+
 int main(int argc, char *argv[])
 {
 // #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
@@ -12,7 +15,10 @@ int main(int argc, char *argv[])
     qputenv("QT_IM_MODULE", QByteArray("cutekeyboard"));
     QGuiApplication app(argc, argv);
 
+    NetworkControl::registerNetworkControl();
+
     QQmlApplicationEngine engine;
+    engine.addImportPath("qrc:/");
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(
         &engine,

@@ -44,7 +44,7 @@ Item {
             }
             MouseArea {
                 anchors.fill: parent
-                onClicked: wifiButtonPressed
+                onClicked: wifiButtonPressed()
             }
         }
 
@@ -54,6 +54,7 @@ Item {
             radius: 8
             width: 500
             height: 60
+            color: "darkslategray"
             Text {
                 anchors.fill: parent
                 id: updateButtonText
