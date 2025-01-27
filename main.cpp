@@ -1,7 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
-#include "WifiChooser/NetworkDiscover.h"
+#include "wifimodule/NetworkDiscover.h"
+#include "updatemodule/updateclient.h"
 
 
 int main(int argc, char *argv[])
@@ -16,6 +17,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     NetworkControl::registerNetworkControl();
+    UpdateClient::registerUpdateClient();
 
     QQmlApplicationEngine engine;
     engine.addImportPath("qrc:/");

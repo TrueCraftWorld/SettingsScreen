@@ -18,6 +18,7 @@ ApplicationWindow {
     }
     Connections {
         target: mainLoader.item // Подключаемся к сигналам загруженного компонента
+
         function onWifiButtonPressed() {
             console.log("qwerty")
             if(mainLoader.item instanceof SettingsList) { // Проверяем, что загружен именно Button
@@ -28,14 +29,18 @@ ApplicationWindow {
         }
         // Если загружен TextItem
         function onUpdateButtonPressed() {
+             console.log("qwerty4")
             if(mainLoader.item instanceof SettingsList) { // Проверяем, что загружен именно Text
+                console.log("qwerty3")
+                // sourceComponent = WiFiConnector
+                mainLoader.source = "updateWindow.qml"
             }
         }
 
-        function onExitButtonPressed() {
-            if(mainLoader.item instanceof SettingsList) { // Проверяем, что загружен именно Text
-            }
-        }
+        // function onExitButtonPressed() {
+        //     if(mainLoader.item instanceof SettingsList) { // Проверяем, что загружен именно Text
+        //     }
+        // }
 
         // function onReturnButtonPressed() {
         //     if(!loader.item instanceof SettingsList) { // Проверяем, что загружен именно Text

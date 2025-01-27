@@ -13,6 +13,10 @@ Item {
             left:parent.left
             top: parent.top
         }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: exitButtonPressed()
+        }
         width: 55
         height: 55
         color: "darkblue"
@@ -62,7 +66,7 @@ Item {
             }
             MouseArea {
                 anchors.fill: parent
-                onClicked: updateButtonPressed
+                onClicked: updateButtonPressed()
             }
         }
     }

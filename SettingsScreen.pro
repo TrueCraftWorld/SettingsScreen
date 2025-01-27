@@ -1,4 +1,5 @@
 include(wifimodule/wifichooser.pri)
+include(updatemodule/updateclient.pri)
 QT += quick
 
 # You can make your code fail to compile if it uses deprecated APIs.
