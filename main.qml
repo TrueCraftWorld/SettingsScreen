@@ -42,11 +42,11 @@ ApplicationWindow {
         //     }
         // }
 
-        // function onReturnButtonPressed() {
-        //     if(!loader.item instanceof SettingsList) { // Проверяем, что загружен именно Text
-        //         mainLoader.sourceComponent = SettingsList
-        //     }
-        // }
+        function onReturnButtonPressed() {
+            // if(!mainLoader.item instanceof SettingsList) { // Проверяем, что загружен именно Text
+                mainLoader.source = "SettingsList.qml"
+            // }
+        }
     }
 
     // InputPanel {
