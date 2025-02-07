@@ -9,6 +9,8 @@ ApplicationWindow {
     width: 1280
     height: 800
     visible: true
+    color: "black"
+    id: root
     Loader {
         id: mainLoader
         anchors.fill: parent
@@ -49,34 +51,34 @@ ApplicationWindow {
         }
     }
 
-    // InputPanel {
-    //     id: inputPanel
+    InputPanel {
+        id: inputPanel
 
-    //     z: 99
-    //     y: root.height
-    //     availableLanguageLayouts: ["Ru","En"]
-    //     anchors.left: parent.left
-    //     anchors.right: parent.right
+        z: 99
+        y: root.height
+        availableLanguageLayouts: ["Ru","En"]
+        anchors.left: parent.left
+        anchors.right: parent.right
 
-    //     states: State {
-    //         name: "visible"
-    //         when: Qt.inputMethod.visible
-    //         PropertyChanges {
-    //             target: inputPanel
-    //             y: root.height - inputPanel.height
-    //         }
-    //     }
-    //     transitions: Transition {
-    //         from: ""
-    //         to: "visible"
-    //         reversible: true
-    //         ParallelAnimation {
-    //             NumberAnimation {
-    //                 properties: "y"
-    //                 duration: 150
-    //                 easing.type: Easing.InOutQuad
-    //             }
-    //         }
-    //     }
-    // }
+        states: State {
+            name: "visible"
+            when: Qt.inputMethod.visible
+            PropertyChanges {
+                target: inputPanel
+                y: root.height - inputPanel.height
+            }
+        }
+        transitions: Transition {
+            from: ""
+            to: "visible"
+            reversible: true
+            ParallelAnimation {
+                NumberAnimation {
+                    properties: "y"
+                    duration: 150
+                    easing.type: Easing.InOutQuad
+                }
+            }
+        }
+    }
 }
