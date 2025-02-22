@@ -75,3 +75,4 @@ SettingsScreen.pro.user
 SettingsScreen.pro.user
 .vscode/settings.json
 SettingsScreen.pro.user
+pkg-config_wrapper.sh
