@@ -1,4 +1,3 @@
-
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Window 2.15
@@ -15,8 +14,6 @@ ApplicationWindow {
         id: mainLoader
         anchors.fill: parent
         source: "qrc:/SettingsList.qml"
-        // sourceComponent: SettingsList
-
     }
     Connections {
         target: mainLoader.item // Подключаемся к сигналам загруженного компонента
@@ -25,29 +22,22 @@ ApplicationWindow {
             console.log("qwerty")
             if(mainLoader.item instanceof SettingsList) { // Проверяем, что загружен именно Button
                 console.log("qwerty2")
-                // sourceComponent = WiFiConnector
                 mainLoader.source = "WiFiConnector.qml"
             }
         }
         // Если загружен TextItem
         function onUpdateButtonPressed() {
-             console.log("qwerty4")
             if(mainLoader.item instanceof SettingsList) { // Проверяем, что загружен именно Text
-                console.log("qwerty3")
-                // sourceComponent = WiFiConnector
                 mainLoader.source = "updateWindow.qml"
             }
         }
 
-        // function onExitButtonPressed() {
-        //     if(mainLoader.item instanceof SettingsList) { // Проверяем, что загружен именно Text
-        //     }
-        // }
+        function onExitButtonPressed(){
+            Qt.quit()
+        }
 
         function onReturnButtonPressed() {
-            // if(!mainLoader.item instanceof SettingsList) { // Проверяем, что загружен именно Text
-                mainLoader.source = "SettingsList.qml"
-            // }
+            mainLoader.source = "SettingsList.qml"
         }
     }
 

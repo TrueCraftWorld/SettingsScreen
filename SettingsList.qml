@@ -7,20 +7,18 @@ Item {
     signal wifiButtonPressed()
     signal updateButtonPressed()
     signal exitButtonPressed()
-    Rectangle {
+
+    ServiceButton {
         id: exitButton
+        text: qsTr("Выход")
         anchors {
             left:parent.left
             top: parent.top
+            margins: 10
         }
-        MouseArea {
-            anchors.fill: parent
-            onClicked: exitButtonPressed()
-        }
-        width: 55
-        height: 55
-        color: "darkblue"
+        onTapped: settinsScreen.exitButtonPressed()
     }
+
 
     ColumnLayout {
         id: buttonColumn
@@ -31,8 +29,6 @@ Item {
             left:parent.left
             bottom: parent.bottom
         }
-        // topMargin: 25
-        // bottomMargin: 25
 
         Rectangle {
             id: wifiButton
@@ -44,6 +40,7 @@ Item {
             Text {
                 anchors.fill: parent
                 id: wifiText
+                color: "white"
                 text: qsTr("Настройки Wifi")
             }
             MouseArea {
@@ -62,6 +59,7 @@ Item {
             Text {
                 anchors.fill: parent
                 id: updateButtonText
+                color: "white"
                 text: qsTr("Обновление ...")
             }
             MouseArea {
