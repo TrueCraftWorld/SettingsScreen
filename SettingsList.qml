@@ -9,10 +9,14 @@ Item {
     signal wifiButtonPressed()
     signal updateButtonPressed()
     signal exitButtonPressed()
-
+    Rectangle {
+        id: background
+        anchors.fill: parent
+        color: "darkslategray"
+    }
     SButton{
         id: exitButton
-        style: "btn-secondary"
+        style: "btn-secondary lg"
         text: qsTr("Выход")
         onClicked: settinsScreen.exitButtonPressed()
         anchors {
@@ -34,16 +38,16 @@ Item {
         SButton {
             id: wifiButton
             span: 10
-            style: "btn-outline-primary"
-            Layout.alignment: Qt.AlignHCenter
+            style: "btn-outline-primary lg"
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
             text: qsTr("Настройки Wifi")
             onClicked: wifiButtonPressed()
         }
 
         SButton {
             id: updateButton
-            style: "btn-outline-primary"
-            Layout.alignment: Qt.AlignHCenter
+            style: "btn-outline-primary lg"
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
             span: 10
             onClicked: updateButtonPressed()
             text: qsTr("Обновление ...")
