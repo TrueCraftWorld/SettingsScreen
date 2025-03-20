@@ -31,3 +31,7 @@ QT_QPA_ENABLE_TERMINAL_KEYBOARD = 0
 
 target.path = /usr/share/qtpr
 INSTALLS += target
+
+DISTFILES += \
+    SettingsList.qml \
+    main.qml

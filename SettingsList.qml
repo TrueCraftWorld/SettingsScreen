@@ -2,27 +2,28 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15
 
+import StratifyLabs.UI 2.0
+
 Item {
     id: settinsScreen
     signal wifiButtonPressed()
     signal updateButtonPressed()
     signal exitButtonPressed()
 
-    ServiceButton {
+    SButton{
         id: exitButton
+        style: "btn-secondary"
         text: qsTr("Выход")
+        onClicked: settinsScreen.exitButtonPressed()
         anchors {
             left:parent.left
-            top: parent.top
-            margins: 10
+            bottom: parent.bottom
+            margins: 15
         }
-        onTapped: settinsScreen.exitButtonPressed()
+
     }
-
-
-    ColumnLayout {
+    SRow {
         id: buttonColumn
-        spacing: 5
         height: parent.height - 55
         anchors{
             right: parent.right
@@ -30,43 +31,22 @@ Item {
             bottom: parent.bottom
         }
 
-        Rectangle {
+        SButton {
             id: wifiButton
-            Layout.alignment: Qt.AlignCenter
-            radius: 8
-            width: 500
-            height: 60
-            color: "darkslategray"
-            Text {
-                anchors.fill: parent
-                id: wifiText
-                color: "white"
-                text: qsTr("Настройки Wifi")
-            }
-            MouseArea {
-                anchors.fill: parent
-                onClicked: wifiButtonPressed()
-            }
+            span: 10
+            style: "btn-outline-primary"
+            Layout.alignment: Qt.AlignHCenter
+            text: qsTr("Настройки Wifi")
+            onClicked: wifiButtonPressed()
         }
 
-        Rectangle {
+        SButton {
             id: updateButton
-            Layout.alignment: Qt.AlignCenter
-            radius: 8
-            width: 500
-            height: 60
-            color: "darkslategray"
-            Text {
-                anchors.fill: parent
-                id: updateButtonText
-                color: "white"
-                text: qsTr("Обновление ...")
-            }
-            MouseArea {
-                anchors.fill: parent
-                onClicked: updateButtonPressed()
-            }
+            style: "btn-outline-primary"
+            Layout.alignment: Qt.AlignHCenter
+            span: 10
+            onClicked: updateButtonPressed()
+            text: qsTr("Обновление ...")
         }
     }
-
 }
