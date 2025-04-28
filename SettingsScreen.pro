@@ -33,5 +33,6 @@ target.path = /usr/share/qtpr
 INSTALLS += target
 
 DISTFILES += \
+    AboutScreen.qml \
     SettingsList.qml \
     main.qml

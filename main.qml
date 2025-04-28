@@ -27,17 +27,26 @@ ApplicationWindow {
         }
         // Если загружен TextItem
         function onUpdateButtonPressed() {
-            if(mainLoader.item instanceof SettingsList) { // Проверяем, что загружен именно Text
+            if (mainLoader.item instanceof SettingsList) { // Проверяем, что загружен именно Text
                 mainLoader.source = "updateWindow.qml"
             }
         }
 
-        function onExitButtonPressed(){
+        function onAboutButtonPressed() {
+            if (mainLoader.item instanceof SettingsList) {
+                mainLoader.source = "AboutScreen.qml"
+            }
+        }
+
+        function onExitButtonPressed() {
             Qt.quit()
         }
 
         function onReturnButtonPressed() {
-            mainLoader.source = "SettingsList.qml"
+            if (mainLoader.item instanceof SettingsList)
+                ;
+            else
+                mainLoader.source = "SettingsList.qml"
         }
     }
 

@@ -9,11 +9,13 @@ Item {
     signal wifiButtonPressed()
     signal updateButtonPressed()
     signal exitButtonPressed()
+    signal aboutButtonPressed()
     Rectangle {
         id: background
         anchors.fill: parent
         color: "darkslategray"
     }
+
     SButton{
         id: exitButton
         style: "btn-secondary lg"
@@ -24,8 +26,8 @@ Item {
             bottom: parent.bottom
             margins: 15
         }
-
     }
+
     SRow {
         id: buttonColumn
         height: parent.height - 55
@@ -40,7 +42,7 @@ Item {
             span: 10
             style: "btn-outline-primary lg"
             Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-            text: qsTr("Настройки Wifi")
+            text: qsTr("Настройки WiFi")
             onClicked: wifiButtonPressed()
         }
 
@@ -51,6 +53,14 @@ Item {
             span: 10
             onClicked: updateButtonPressed()
             text: qsTr("Обновление ...")
+        }
+        SButton {
+            id: aboutButton
+            style: "btn-outline-primary lg"
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+            span: 10
+            onClicked: aboutButtonPressed()
+            text: qsTr("О программе")
         }
     }
 }
