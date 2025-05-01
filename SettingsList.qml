@@ -15,10 +15,20 @@ Item {
         anchors.fill: parent
         color: "darkslategray"
     }
+    SLabel {
+        id: screenTitle
+        style: "label-primary lg"
+        text: qsTr("Настройки")
+        anchors {
+            top: parent.top
+            left: parent.left
+            right: parent.right
+        }
+    }
 
     SButton{
         id: exitButton
-        style: "btn-secondary lg"
+        style: "btn-secondary"
         text: qsTr("Выход")
         onClicked: settinsScreen.exitButtonPressed()
         anchors {
@@ -28,20 +38,24 @@ Item {
         }
     }
 
-    SRow {
+
+    SColumn {
         id: buttonColumn
-        height: parent.height - 55
         anchors{
-            right: parent.right
-            left:parent.left
-            bottom: parent.bottom
+            top: screenTitle.bottom
+            topMargin: 25
         }
+
+        width: parent.width
+        rowSpacing: 15
 
         SButton {
             id: wifiButton
-            span: 10
             style: "btn-outline-primary lg"
             Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+            Layout.preferredWidth: 320
+            // verticalPadding: 10
+
             text: qsTr("Настройки WiFi")
             onClicked: wifiButtonPressed()
         }
@@ -50,7 +64,10 @@ Item {
             id: updateButton
             style: "btn-outline-primary lg"
             Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-            span: 10
+            Layout.preferredWidth: 320
+            // span: 10
+            // verticalPadding: 10
+
             onClicked: updateButtonPressed()
             text: qsTr("Обновление ...")
         }
@@ -58,9 +75,11 @@ Item {
             id: aboutButton
             style: "btn-outline-primary lg"
             Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-            span: 10
+            Layout.preferredWidth: 320
+
             onClicked: aboutButtonPressed()
             text: qsTr("О программе")
         }
+
     }
 }
