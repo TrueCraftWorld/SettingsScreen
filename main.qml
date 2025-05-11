@@ -19,9 +19,7 @@ ApplicationWindow {
         target: mainLoader.item // Подключаемся к сигналам загруженного компонента
 
         function onWifiButtonPressed() {
-            console.log("qwerty")
             if(mainLoader.item instanceof SettingsList) { // Проверяем, что загружен именно Button
-                console.log("qwerty2")
                 mainLoader.source = "WiFiConnector.qml"
             }
         }
