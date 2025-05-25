@@ -1,5 +1,5 @@
-include(wifimodule/wifichooser.pri)
-include(updatemodule/updateclient.pri)
+include(settingsscreen.pri)
+
 QT += quick
 
 # You can make your code fail to compile if it uses deprecated APIs.
@@ -33,6 +33,4 @@ target.path = /usr/share/qtpr
 INSTALLS += target
 
 DISTFILES += \
-    AboutScreen.qml \
-    SettingsList.qml \
     main.qml

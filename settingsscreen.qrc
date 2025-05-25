@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>SettingsList.qml</file>
+        <file>AboutScreen.qml</file>
+    </qresource>
+</RCC>
