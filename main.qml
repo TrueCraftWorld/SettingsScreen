@@ -10,42 +10,9 @@ ApplicationWindow {
     visible: true
     color: "black"
     id: root
-    Loader {
-        id: mainLoader
+
+    SettingsMain {
         anchors.fill: parent
-        source: "qrc:/SettingsList.qml"
-    }
-    Connections {
-        target: mainLoader.item // Подключаемся к сигналам загруженного компонента
-
-        function onWifiButtonPressed() {
-            if(mainLoader.item instanceof SettingsList) { // Проверяем, что загружен именно Button
-                mainLoader.source = "WiFiConnector.qml"
-            }
-        }
-        // Если загружен TextItem
-        function onUpdateButtonPressed() {
-            if (mainLoader.item instanceof SettingsList) { // Проверяем, что загружен именно Text
-                mainLoader.source = "updateWindow.qml"
-            }
-        }
-
-        function onAboutButtonPressed() {
-            if (mainLoader.item instanceof SettingsList) {
-                mainLoader.source = "AboutScreen.qml"
-            }
-        }
-
-        function onExitButtonPressed() {
-            Qt.quit()
-        }
-
-        function onReturnButtonPressed() {
-            if (mainLoader.item instanceof SettingsList)
-                ;
-            else
-                mainLoader.source = "SettingsList.qml"
-        }
     }
 
     InputPanel {

@@ -11,4 +11,5 @@ RESOURCES += $$PWD/settingsscreen.qrc
 
 DISTFILES += \
     $$PWD/AboutScreen.qml \
-    $$PWD/SettingsList.qml
+    $$PWD/SettingsList.qml \
+    $$PWD/SettingsMain.qml
