@@ -1,5 +1,5 @@
-include(wifimodule/wifichooser.pri)
-include(updatemodule/updateclient.pri)
+include($$PWD/wifimodule/wifichooser.pri)
+include($$PWD/updatemodule/updateclient.pri)
 
 QT += quick
 CONFIG += c++17 link_pkgconfig disable-desktop
