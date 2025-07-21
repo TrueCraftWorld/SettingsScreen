@@ -49,11 +49,11 @@ Item {
             SColumn {
                 SText {
                     style: "left";
-                    text: qsTr("Stratify QML 2");
+                    text: "Stratify QML 2";
                 }
                 SText {
                     style: "left";
-                    text: qsTr("PullToRefreshHandler");
+                    text: "PullToRefreshHandler";
                 }
             }
         }
