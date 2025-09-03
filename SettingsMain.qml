@@ -1,7 +1,7 @@
 import QtQuick 2.15
 
 Item {
-
+    signal returnButtonPressed()
     Loader {
         id: mainLoader
         anchors.fill: parent
@@ -29,7 +29,7 @@ Item {
         }
 
         function onExitButtonPressed() {
-            Qt.quit()
+            mainLoader.returnButtonPressed()
         }
 
         function onReturnButtonPressed() {
